@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: absolute;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 2500px;
+  position: relative;
+  margin: auto;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    margin-left: 15px;
+    margin-right:1px;
+    /*margin: auto;*/
+  }
+  
+  /* Navbar links */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  /*.fixed-header,*/ .fixed-footer{
+    width: 100%;
+    position: absolute;
+    background:#000;
+    padding: 10px 0;
+    color:#fff;
+    
+}
+.head h1{
+    color: red;
+    font-size: 75px;
+    font-style: bold;
+    top: -45px;
+    left: 10px;
+    position: absolute;
+    padding-bottom: 30px;
+    font-family: Impact;
+    display: block;
+    perspective: 1000px;
+    perspective-origin: 50% 0;
+    transform-origin: 0 0;
+    transform: scaleX(80) rotate(89.5deg);
+}
+.menu{
+    position: absolute;
+    left:18%;
+    top: 38;
+    font-size: 25px;
+    color: #fff;
+    word-spacing: 10px;
+}
+.menu a{
+    color: #fff;
+    text-decoration: none;
+    word-spacing: 30px;
+}
+.menu2{
+    position: absolute;
+    left: 80%;
+    top: 35px;
+    font-size: 30px;
+    word-spacing: 15px;
+}
+.menu2 a{
+    color: #fff;
+    text-decoration: none;
+    word-spacing: 15px;
+    margin-left: 10px;
+}
+table{
+    margin-left: 20px;
+}
+img{
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 23%;
+}
+#Genre{
+     box-sizing: border-box;
+     width: 150px;
+     height: 50px; ;
+     margin-left: 15px;
+     color:#000;
+     font-size: 17px;
+    
+}
+.example{
+    box-sizing: border-box;
+     width: 1080px;
+     height: 50px; ;
+     margin-left: 15px;
+     color:#000;
+     font-size: 17px;
+}
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+  
+}
+
+.example button:hover {
+  background: #0b7dda;
+}
+
+.example::after{
+  content: "";
+  clear:both ;
+  display: table;
+  margin-right: auto;
+}
+
+h1{
+    color: #000;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-bottom: 5px solid black;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+/*.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="topnav">
+    <a  style=" border: 2px solid sienna; border-radius: 25px;box-shadow: 2px 2px;color:white;" href="#home">LIGOWA</a>
+    <a href="index.html">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#views">views</a>
+    <a href="#about">About</a>
+  </div>
+  <!--<div class="numbertext">1 / 3</div>-->
+  <img src="ch1.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <!--<div class="numbertext">2 / 3</div>-->
+  <img src="ch4.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+<!--<div class="numbertext">3 / 3</div>-->
+  <img src="ch6.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<!--<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>-->
+<select name="Genre" placeholder="genre" id="Genre">
+  <b> <option value="genre">list</option></b>
+ <b> <option value="Action movies">veg</option></b>
+ <b><option value="Popular in Action">non-veg</option></b>
+  <b><option value=">Popular in Drama">popular dish</option></b>
+    <b> <option value="kids">kids special</option></b>
+</select>
+<!----<form class="example" action="/action_page.php">-->
+    <input class="example" type="text" placeholder="Search.." name="search">
+   <!----<button type="submit">--><i class="fa fa-search"></i>
+  
+<h1>veg</h1>
+      <div class="first">
+        
+          <table>
+              <tr>
+                  <a href="store/a1.mp4"><img src="ch2.jpg"></a>
+                  <a href="store/a2.mp4"><img src="ch7.jpg"></a>
+                  <a href="store/a3.mp4"><img src="ch5.jpg"></a>
+                  <a href="store/a4.mp4"><img src="ch3.jpg"></a>
+                 
+              </tr>
+          </table>
+        </div><br><br><br><br>
+        <h1>non-veg</h1>
+        <div class="first">
+            <table>
+                <tr>
+                    
+                    <a href="store/a5.mp4"><img src="ch1.jpg"></a>
+                    <a href="store/a6.mp4"><img src="ch2.jpg"></a>
+                    <a href="store/a7.mp4"><img src="ch3.jpg"></a>
+                    <a href="store/a8.mp4"><img src="ch4.jpg"></a>
+                   
+                </tr>
+            </table>
+          </div><br><br><br><br>
+          <h1>Popular dish</h1>
+          <div class="first">
+            <table>
+                <tr>
+                    <a href="store/a8.mp4"><img src="ch5.jpg"></a>
+                    <a href="store/a8.mp4"><img src="ch6.jpg"></a>
+                    <a href="store/a8.mp4"><img src="ch7.jpg"></a>
+                    <a href="store/a8.mp4"><img src="ch4.jpg"></a>
+                   
+                </tr>
+            </table>
+          </div><br><br><br><br>
+          <div class="fixed-footer">
+            <div class="container">
+                <a  style=" border: 2px solid sienna; border-radius: 25px;box-shadow: 2px 2px;color:white;" href="#home">LIGOWS</a>
+                Powered by LIGOWS Restaurent. All Rights Reserved.
+            </div>
+        </div>
+   
+        <script>
+          var slideIndex = 1;
+          showSlides(slideIndex);
+          
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+          }
+          </script>
+</body>
+</html> 

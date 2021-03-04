@@ -1,0 +1,106 @@
+<html>
+<style>
+body{
+
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("rest.jpg");
+
+  min-height: 800px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #8B4513;
+  border: none;
+  
+  
+}
+
+.button:hover {background-color:#FFA500}
+
+.button:active {
+  
+  
+  transform: translateY(4px);
+}
+.sidenav{
+	height: 100%;
+	width: 160px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.sidenav a:hover {
+  color: grey;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<body class="bg-img">
+  <center><h1 style="color:white">LIGOWS RESTAURANT</h1></center>
+<!--<div class="sidenav">-->
+  <button class="button"><a style="color:white;text-decoration:none " href="index.html">Home</button></button><br><br>
+  
+  <button onclick="myFunction()" class="button"><a style="color:white;text-decoration:none;" href="menu.html">Menu</button>
+  
+  <br><br>
+  <button class="button"><a style="color:white;text-decoration:none" href="contact.html">Contact</a></button>
+<!--</div>-->
+
+<div class="main">
+	<div align="center">
+	<!--<img src="cl.jpg" alt="clg" width="600" height="600">-->
+    </div>
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>	
+</body>
+</html>
